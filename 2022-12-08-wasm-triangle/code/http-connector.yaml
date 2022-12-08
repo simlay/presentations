@@ -6,7 +6,7 @@ create_topic: true
 parameters:
   endpoint: 'https://api.github.com/repos/infinyon/fluvio'
   method: GET
-  interval: '5s'
+  interval: '1s'
   header: 'Authorization: token <YOUR GITHUB TOKEN>'
   transform: '{"uses": "simlay/github-stars-aggregate@0.1.0", "with": {}}'
 #transform:
