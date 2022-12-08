@@ -1,0 +1,11 @@
+name: github-stars-input
+type: http-source
+version: 0.4.1
+topic: github-stars
+create_topic: true
+parameters:
+  endpoint: 'https://api.github.com/repos/infinyon/fluvio'
+  method: GET
+  interval: '30s'
+  header: 'Authorization: token <YOUR GITHUB TOKEN>'
+  aggregate: github-stars-aggregate
