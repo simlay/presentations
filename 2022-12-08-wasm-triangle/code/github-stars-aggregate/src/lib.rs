@@ -1,6 +1,4 @@
 
-use fluvio_smartmodule::dataplane::smartmodule::{SmartModuleExtraParams};
-
 mod model;
 use model::GithubStars;
 use fluvio_smartmodule::{smartmodule, Record, RecordData, Result as EyreResult};
@@ -17,16 +15,6 @@ pub fn aggregate(accumulator: RecordData, current: &Record) -> EyreResult<Record
 
     let accumulated_stars: RecordData = accumulated_stars.try_into()?;
     Ok(accumulated_stars)
-}
-
-
-
-
-#[smartmodule(init)]
-fn init(_params: SmartModuleExtraParams) -> EyreResult<()> {
-    // You can refer to the example SmartModules in Fluvio's GitHub Repository
-    // https://github.com/infinyon/fluvio/tree/master/smartmodule
-    todo!("Provide initialization logic for your SmartModule")
 }
 
 

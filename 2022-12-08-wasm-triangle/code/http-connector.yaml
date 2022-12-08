@@ -1,11 +1,13 @@
 name: github-stars-input
 type: http-source
-version: 0.4.1
+version: '0.4.1'
 topic: github-stars
 create_topic: true
 parameters:
   endpoint: 'https://api.github.com/repos/infinyon/fluvio'
   method: GET
-  interval: '30s'
+  interval: '5s'
   header: 'Authorization: token <YOUR GITHUB TOKEN>'
-  aggregate: github-stars-aggregate
+  transform: '{"uses": "simlay/github-stars-aggregate@0.1.0", "with": {}}'
+#transform:
+#  - uses: simlay/github-stars-aggregate@0.1.0
