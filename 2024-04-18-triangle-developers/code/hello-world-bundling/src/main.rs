@@ -12,6 +12,7 @@ fn main() {
         sleep(Duration::from_millis(500));
     }
 }
+
 #[test]
 fn add() {
     assert_eq!(1 + 1, 2);
